@@ -19,6 +19,12 @@ jobs:
         image: prom/prometheus:latest
         ports:
           - 9090:9090      # Prometheus UI
+          -
+    env:
+      SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+      SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+      TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+      TEST_CODE: ${{ secrets.TEST_CODE }}
 
     steps:
       # Шаг 1: Клонирование репозитория
