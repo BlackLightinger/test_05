@@ -49,7 +49,7 @@ jobs:
       # Шаг 5: Поднятие сервера
       - name: Start application server
         run: |
-          python your_application.py &
+          python main.py &
         env:
           JAEGER_AGENT_HOST: localhost
           JAEGER_AGENT_PORT: 6831
