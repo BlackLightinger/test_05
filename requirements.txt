@@ -65,7 +65,7 @@ parse_type==0.6.4
 pillow==11.0.0
 prometheus_client==0.21.1
 prompt_toolkit==3.0.48
-protobuf==4.25.5
+protobuf==4.21.0
 psutil==6.1.0
 pydantic==1.10.15
 pyparsing==3.2.0
