@@ -19,7 +19,6 @@ jobs:
         image: prom/prometheus:latest
         ports:
           - 9090:9090      # Prometheus UI
-          -
 
     env:
       SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
