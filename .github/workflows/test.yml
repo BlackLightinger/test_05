@@ -26,6 +26,7 @@ jobs:
       TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
       TEST_CODE: ${{ secrets.TEST_CODE }}
 
+
     steps:
       # Шаг 1: Клонирование репозитория
       - name: Checkout code
