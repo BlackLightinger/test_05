@@ -95,8 +95,8 @@ def setup_otel():
 
 
 def send_verification_email(email: str, code: str):
-    sender_email = os.environ["sender_email"]
-    sender_password = os.environ["sender_password"]
+    sender_email = os.environ["SENDER_EMAIL"]
+    sender_password = os.environ["SENDER_PASSWORD"]
 
     msg = MIMEText(f'Ваш код подтверждения: {code}')
     msg['Subject'] = 'Код подтверждения'
