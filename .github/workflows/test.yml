@@ -46,7 +46,22 @@ jobs:
           pip install -r requirements.txt
           pip install behave
 
-      # Шаг 4: Запуск тестов Behave с мониторингом
+      # Шаг 5: Поднятие сервера
+      - name: Start application server
+        run: |
+          python your_application.py &
+        env:
+          JAEGER_AGENT_HOST: localhost
+          JAEGER_AGENT_PORT: 6831
+
+      # Шаг 6: Ожидание готовности сервера
+      - name: Wait for server to be ready
+        run: |
+          for i in {1..30}; do
+            curl -f http://localhost:8000/health || sleep 2
+          done
+
+      # Шаг 7: Запуск тестов Behave с мониторингом
       - name: Run Behave tests
         env:
           JAEGER_AGENT_HOST: localhost
@@ -55,7 +70,7 @@ jobs:
           behave --junit --junit-directory reports
           curl -o prometheus-metrics.txt http://localhost:9090/metrics
 
-      # Шаг 5: Сохранение артефактов (результатов тестов и метрик)
+      # Шаг 8: Сохранение артефактов (результатов тестов и метрик)
       - name: Upload Behave test reports
         uses: actions/upload-artifact@v3
         with:
