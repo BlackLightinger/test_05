@@ -19,15 +19,23 @@ jobs:
         image: prom/prometheus:latest
         ports:
           - 9090:9090      # Prometheus UI
-        volumes:
-          - prometheus.yml:/etc/prometheus/prometheus.yml
 
     steps:
       # Шаг 1: Клонирование репозитория
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Шаг 2: Установка Python и зависимостей
+      # Шаг 2: Создание файла prometheus.yml
+      - name: Create prometheus.yml
+        run: |
+          echo "global:" > prometheus.yml
+          echo "  scrape_interval: 15s" >> prometheus.yml
+          echo "scrape_configs:" >> prometheus.yml
+          echo "  - job_name: 'prometheus'" >> prometheus.yml
+          echo "    static_configs:" >> prometheus.yml
+          echo "      - targets: ['localhost:9090']" >> prometheus.yml
+
+      # Шаг 3: Установка Python и зависимостей
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -38,7 +46,7 @@ jobs:
           pip install -r requirements.txt
           pip install behave
 
-      # Шаг 3: Запуск тестов Behave с мониторингом
+      # Шаг 4: Запуск тестов Behave с мониторингом
       - name: Run Behave tests
         env:
           JAEGER_AGENT_HOST: localhost
@@ -47,7 +55,7 @@ jobs:
           behave --junit --junit-directory reports
           curl -o prometheus-metrics.txt http://localhost:9090/metrics
 
-      # Шаг 4: Сохранение артефактов (результатов тестов и метрик)
+      # Шаг 5: Сохранение артефактов (результатов тестов и метрик)
       - name: Upload Behave test reports
         uses: actions/upload-artifact@v3
         with:
