@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()  
 
-test_email = os.environ["test_email"]
-test_code = os.environ["test_code"]
+test_email = os.environ["TEST_EMAIL"]
+test_code = os.environ["TEST_CODE"]
 
 
 class UserCreate(BaseModel):
