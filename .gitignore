@@ -1,0 +1,12 @@
+__pycache__/
+*.env
+
+.idea
+
+venv/
+
+### Mac OS ###
+.DS_Store
+
+prometheus-3.1.0.darwin-arm64/
+prometheus-3.1.0.darwin-arm64/

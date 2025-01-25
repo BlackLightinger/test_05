@@ -1,0 +1,73 @@
+[
+    {
+        "action": "register",
+        "resources_before": "Operation: register start, Memory RSS: 56676352 bytes, Memory VMS: 239583232 bytes, CPU User Time: 0.55 seconds, CPU System Time: 0.12 seconds",
+        "resources_logging": "Operation: resources after logging, Memory RSS: 56676352 bytes, Memory VMS: 239583232 bytes, CPU User Time: 0.56 seconds, CPU System Time: 0.12 seconds",
+        "resources_after": "Operation: register end, Memory RSS: 56807424 bytes, Memory VMS: 239583232 bytes, CPU User Time: 0.56 seconds, CPU System Time: 0.12 seconds"
+    }
+]{
+    "action": "verify",
+    "resources_before": "Operation: verify start, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.56 seconds, CPU System Time: 0.12 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.56 seconds, CPU System Time: 0.12 seconds",
+    "resources_after": "Operation: verify end, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.56 seconds, CPU System Time: 0.12 seconds"
+}
+{
+    "action": "login",
+    "resources_before": "Operation: login start, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.12 seconds",
+    "resources_logging": "Operation: send_verification_email after logger, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.12 seconds",
+    "resources_after": "Operation: login end, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.12 seconds"
+}
+{
+    "action": "reset_password_request",
+    "resources_before": "Operation: reset_password_request start, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.12 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.13 seconds",
+    "resources_after": "Operation: reset_password_request end, Memory RSS: 56807424 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.58 seconds, CPU System Time: 0.13 seconds"
+}
+{
+    "action": "reset_password_confirm",
+    "resources_before": "Operation: reset_password_confirm start, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.59 seconds, CPU System Time: 0.13 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.59 seconds, CPU System Time: 0.13 seconds",
+    "resources_after": "Operation: reset_password_confirm end, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.59 seconds, CPU System Time: 0.13 seconds"
+}
+{
+    "action": "delete",
+    "resources_before": "Operation: delete start, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.6 seconds, CPU System Time: 0.13 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.6 seconds, CPU System Time: 0.13 seconds",
+    "resources_after": "Operation: delete end, Memory RSS: 56938496 bytes, Memory VMS: 239849472 bytes, CPU User Time: 0.6 seconds, CPU System Time: 0.13 seconds"
+}
+{
+    "action": "register",
+    "resources_before": "Operation: register start, Memory RSS: 58245120 bytes, Memory VMS: 316608512 bytes, CPU User Time: 0.74 seconds, CPU System Time: 0.2 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 58245120 bytes, Memory VMS: 316608512 bytes, CPU User Time: 0.74 seconds, CPU System Time: 0.2 seconds",
+    "resources_after": "Operation: register end, Memory RSS: 58376192 bytes, Memory VMS: 316608512 bytes, CPU User Time: 0.74 seconds, CPU System Time: 0.2 seconds"
+}
+{
+    "action": "verify",
+    "resources_before": "Operation: verify start, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.74 seconds, CPU System Time: 0.2 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.75 seconds, CPU System Time: 0.2 seconds",
+    "resources_after": "Operation: verify end, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.75 seconds, CPU System Time: 0.2 seconds"
+}
+{
+    "action": "login",
+    "resources_before": "Operation: login start, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.75 seconds, CPU System Time: 0.2 seconds",
+    "resources_logging": "Operation: send_verification_email after logger, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.2 seconds",
+    "resources_after": "Operation: login end, Memory RSS: 58376192 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.2 seconds"
+}
+{
+    "action": "reset_password_request",
+    "resources_before": "Operation: reset_password_request start, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.2 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.2 seconds",
+    "resources_after": "Operation: reset_password_request end, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.21 seconds"
+}
+{
+    "action": "reset_password_confirm",
+    "resources_before": "Operation: reset_password_confirm start, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.21 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.21 seconds",
+    "resources_after": "Operation: reset_password_confirm end, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.76 seconds, CPU System Time: 0.21 seconds"
+}
+{
+    "action": "delete",
+    "resources_before": "Operation: delete start, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.77 seconds, CPU System Time: 0.21 seconds",
+    "resources_logging": "Operation: resources after logging, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.77 seconds, CPU System Time: 0.21 seconds",
+    "resources_after": "Operation: delete end, Memory RSS: 58507264 bytes, Memory VMS: 316903424 bytes, CPU User Time: 0.77 seconds, CPU System Time: 0.21 seconds"
+}

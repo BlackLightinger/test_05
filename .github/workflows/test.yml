@@ -1,0 +1,61 @@
+name: CI with Monitoring for Behave
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-with-monitoring:
+    runs-on: ubuntu-latest
+    services:
+      jaeger:
+        image: jaegertracing/all-in-one:latest
+        ports:
+          - 16686:16686    # Jaeger UI
+          - 6831:6831/udp  # Jaeger Thrift UDP
+      prometheus:
+        image: prom/prometheus:latest
+        ports:
+          - 9090:9090      # Prometheus UI
+        volumes:
+          - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+    steps:
+      # Шаг 1: Клонирование репозитория
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Шаг 2: Установка Python и зависимостей
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install behave
+
+      # Шаг 3: Запуск тестов Behave с мониторингом
+      - name: Run Behave tests
+        env:
+          JAEGER_AGENT_HOST: localhost
+          JAEGER_AGENT_PORT: 6831
+        run: |
+          behave --junit --junit-directory reports
+          curl -o prometheus-metrics.txt http://localhost:9090/metrics
+
+      # Шаг 4: Сохранение артефактов (результатов тестов и метрик)
+      - name: Upload Behave test reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: behave-reports
+          path: reports
+
+      - name: Upload Prometheus metrics
+        uses: actions/upload-artifact@v3
+        with:
+          name: prometheus-metrics
+          path: prometheus-metrics.txt

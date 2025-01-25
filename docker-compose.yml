@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  # Сервис вашего приложения
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000" # Prometheus метрики
+    environment:
+      JAEGER_AGENT_HOST: jaeger
+      JAEGER_AGENT_PORT: 6831
+    depends_on:
+      - jaeger
+      - prometheus
+
+  # Jaeger для трассировки
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686" # Jaeger UI
+      - "6831:6831/udp" # UDP порт для трассировки
+
+  # Prometheus для сбора метрик
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090" # Prometheus UI
+
+  # Behave для запуска тестов
+  tests:
+    container_name: behave-tests
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/features  # Указываем рабочую папку
+    command: ["sh", "-c", "sleep 2 && behave"]
+    #depends_on:
+     # - app
+      #- jaeger
+      #- prometheus
+    volumes:
+      - .:/app  # Прокидываем текущую директорию в контейнер
